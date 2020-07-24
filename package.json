@@ -1,0 +1,14 @@
+{
+  "name": "lineupx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"cd proj_backend && yarn start\" \"cd proj_frontend && yarn start\" "
+  },
+  "author": "bsankt",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0"
+  }
+}
