@@ -1,10 +1,12 @@
 const User = require('../models/user')
+const Admin = require('../models/admin')
+
 const { validationResult } = require('express-validator')
 const  jwt = require('jsonwebtoken')
 const expressJwt = require('express-jwt')
 
 //signup controller
-exports.signup = (req, res) => {
+exports.userSignup = (req, res) => {
 
     const errors = validationResult(req)
     if(!errors.isEmpty()){
@@ -28,8 +30,71 @@ exports.signup = (req, res) => {
     })
 }
 
+exports.adminSignup = (req, res) => {
+
+    const errors = validationResult(req)
+    if(!errors.isEmpty()){
+        return res.status(422).json({
+            error : `${errors.array()[0].msg}`
+        })
+    }
+
+    const admin = new Admin(req.body)
+    admin.save((err, admin) => {
+        if(err){
+            return res.status(400).json({
+                err: 'Not able to store admin in database'
+            })
+        }
+        res.json({
+            id : admin._id,
+            username : admin.username,
+            email : admin.email,
+            organisation: admin.organisation
+        })
+    })
+}
+
 //login controller
-exports.login = (req, res) => {
+exports.adminLogin = (req, res) => {
+    const errors = validationResult(req)
+
+    const {email, password} = req.body
+
+    if(!errors.isEmpty()){
+        return res.status(422).json({
+            error : `${errors.array()[0].msg}`
+        })
+    }
+
+    Admin.findOne({ email }, (err, admin) => {
+        if(err || !admin){
+            return res.status(400).json({
+                error : 'Email does not exist'
+            })
+        }
+
+        if(!admin.authenticate(password))  {
+            return res.status(401).json({
+                error : 'Incorrect password'
+            })
+        }
+
+        //create token
+        const token = jwt.sign({ _id: admin.id }, process.env.SECRET)
+        
+        //cookie
+        res.cookie('token', token, {expire: new Date() + 9999})
+
+        //response to frontend
+        const {_id, username, email, role} = admin
+        return res.json({token, admin: {_id, username, email, role}})
+
+    })
+
+}
+
+exports.userLogin = (req, res) => {
     const errors = validationResult(req)
 
     const {email, password} = req.body

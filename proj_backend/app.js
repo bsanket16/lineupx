@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
+
 const app = express()
 
 app.use(bodyParser.json())
@@ -11,8 +12,11 @@ app.use(cors())
 
 // routes
 const authRoutes = require('./routes/auth')
+const jobPostingRoutes = require('./routes/jobPosting')
+
 
 app.use('/api', authRoutes)
+app.use('/api', jobPostingRoutes)
 
 //DB connection
 mongoose.connect( process.env.DATABASE, {
