@@ -2,13 +2,13 @@ const express = require('express')
 const router = express.Router()
 const { check } = require('express-validator')
 
-const { createJobPosting, getJobPostings } = require('../controllers/jobPosting')
+const { createJobPosting, getJobPostings, getJobPostingById, acceptJobPosting, rejectJobPosting, getAcceptedJobOffers, getRejectedJobOffers} = require('../controllers/jobPosting')
 const { isSignedIn, isAuthenticated, isAdmin } = require('../controllers/auth')
 const { getUserById, getAdminById } = require('../controllers/user')
-
 //params
 router.param('userId', getUserById)
 router.param('adminId', getAdminById)
+router.param('jobId', getJobPostingById)
 
 //routes
 
@@ -25,9 +25,18 @@ router.post('/job-postings/create/:adminId',[
 ], isSignedIn, isAuthenticated, isAdmin, createJobPosting)
 
 
+// Accept/Reject JobOffers
+router.put('/jobs/:jobId/:userId/accept', isSignedIn, isAuthenticated, acceptJobPosting)
+router.put('/jobs/:jobId/:userId/reject', isSignedIn, isAuthenticated, rejectJobPosting)
+
+// Get Accepted/Rejected JobOffers
+router.get('/jobs/:userId/accepted', isSignedIn, isAuthenticated, getAcceptedJobOffers)
+router.get('/jobs/:userId/rejected', isSignedIn, isAuthenticated, getRejectedJobOffers)
+
 //listings
 router.get('/jobs/admin/:adminId', isSignedIn, isAuthenticated, isAdmin, getJobPostings)
 router.get('/jobs/user/:userId', isSignedIn, isAuthenticated, getJobPostings)
+
 
 
 module.exports = router

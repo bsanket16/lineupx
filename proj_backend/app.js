@@ -14,7 +14,6 @@ app.use(cors())
 const authRoutes = require('./routes/auth')
 const jobPostingRoutes = require('./routes/jobPosting')
 
-
 app.use('/api', authRoutes)
 app.use('/api', jobPostingRoutes)
 

@@ -27,6 +27,10 @@ const jobSchema = new mongoose.Schema({
     salary: {
         type: Number,
         required: true
+    },
+    status: {
+        type: Boolean,
+        required:true
     }
 },
 
