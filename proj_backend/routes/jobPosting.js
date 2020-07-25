@@ -26,12 +26,12 @@ router.post('/job-postings/create/:adminId',[
 
 
 // Accept/Reject JobOffers
-router.put('/jobs/:jobId/:userId/accept', isSignedIn, isAuthenticated, acceptJobPosting)
-router.put('/jobs/:jobId/:userId/reject', isSignedIn, isAuthenticated, rejectJobPosting)
+// router.put('/jobs/:jobId/:userId/accept', isSignedIn, isAuthenticated, acceptJobPosting)
+// router.put('/jobs/:jobId/:userId/reject', isSignedIn, isAuthenticated, rejectJobPosting)
 
-// Get Accepted/Rejected JobOffers
-router.get('/jobs/:userId/accepted', isSignedIn, isAuthenticated, getAcceptedJobOffers)
-router.get('/jobs/:userId/rejected', isSignedIn, isAuthenticated, getRejectedJobOffers)
+// // Get Accepted/Rejected JobOffers
+// router.get('/jobs/:userId/accepted', isSignedIn, isAuthenticated, getAcceptedJobOffers)
+// router.get('/jobs/:userId/rejected', isSignedIn, isAuthenticated, getRejectedJobOffers)
 
 //listings
 router.get('/jobs/admin/:adminId', isSignedIn, isAuthenticated, isAdmin, getJobPostings)

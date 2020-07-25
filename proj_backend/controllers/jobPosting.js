@@ -48,52 +48,52 @@ exports.getJobPostings = (req, res) => {
 }
 
 
-exports.acceptJobPosting = (req, res) => {
-    const jobPosting = req.posting
-    jobPosting.status = true
+// exports.acceptJobPosting = (req, res) => {
+//     const jobPosting = req.posting
+//     jobPosting.status = true
 
-    jobPosting.save((err, updateJobPosting) => {
-        if (err){
-            return res.status(400).json({
-                error : 'Failed to updateJobPosting'
-            })
-        }
-        res.json(updateJobPosting)
-    })
-}
+//     jobPosting.save((err, updateJobPosting) => {
+//         if (err){
+//             return res.status(400).json({
+//                 error : 'Failed to updateJobPosting'
+//             })
+//         }
+//         res.json(updateJobPosting)
+//     })
+// }
 
-exports.rejectJobPosting = (req, res) => {
-    const jobPosting = req.posting
-    jobPosting.status = false
+// exports.rejectJobPosting = (req, res) => {
+//     const jobPosting = req.posting
+//     jobPosting.status = false
 
-    jobPosting.save((err, updateJobPosting) => {
-        if (err){
-            return res.status(400).json({
-                error : 'Failed to updateJobPosting'
-            })
-        }
-        res.json(updateJobPosting)
-    })
-}
+//     jobPosting.save((err, updateJobPosting) => {
+//         if (err){
+//             return res.status(400).json({
+//                 error : 'Failed to updateJobPosting'
+//             })
+//         }
+//         res.json(updateJobPosting)
+//     })
+// }
 
-exports.getAcceptedJobOffers = (req, res) => {
-    JobPosting.find({status : true}).exec((err, jobs) => {
-        if (err){
-            return res.status(400).json({
-                error : 'No Jobs Found'
-            })
-        }
-        res.json({jobs})
-    })  
-}
+// exports.getAcceptedJobOffers = (req, res) => {
+//     JobPosting.find({status : true}).exec((err, jobs) => {
+//         if (err){
+//             return res.status(400).json({
+//                 error : 'No Jobs Found'
+//             })
+//         }
+//         res.json({jobs})
+//     })  
+// }
 
-exports.getRejectedJobOffers = (req, res) => {
-    JobPosting.find({status : false}).exec((err, jobs) => {
-        if (err){
-            return res.status(400).json({
-                error : 'No Jobs Found'
-            })
-        }
-        res.json({jobs})
-    })  
-}
+// exports.getRejectedJobOffers = (req, res) => {
+//     JobPosting.find({status : false}).exec((err, jobs) => {
+//         if (err){
+//             return res.status(400).json({
+//                 error : 'No Jobs Found'
+//             })
+//         }
+//         res.json({jobs})
+//     })  
+// }

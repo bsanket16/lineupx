@@ -28,10 +28,10 @@ const jobSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    status: {
-        type: Boolean,
-        required:true
-    }
+    // status: {
+    //     type: Boolean,
+    //     required:true
+    // }
 },
 
     { timestamps: true }
