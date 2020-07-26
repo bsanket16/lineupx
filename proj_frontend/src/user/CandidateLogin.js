@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Menu from '../core/Menu'
 import { Link, Redirect } from 'react-router-dom'
-import { candidateLogin, authenticate, isAuthenticated} from '../auth/helper'
+import { candidateLogin, authenticate} from '../auth/helper'
 
 const CandidateLogin = () => {
 

@@ -43,7 +43,7 @@ exports.getJobPostings = (req, res) => {
                 error : 'No categories found'
             })
         }
-        res.json({jobs})
+        res.json(jobs)
     })  
 }
 

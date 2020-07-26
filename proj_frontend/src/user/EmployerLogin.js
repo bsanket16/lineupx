@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Menu from '../core/Menu'
 import { Link, Redirect } from 'react-router-dom'
-import { employerLogin, authenticate, isAuthenticated} from '../auth/helper';
+import { employerLogin, authenticate} from '../auth/helper';
 
 const EmployerLogin = () => {
 

@@ -5,6 +5,7 @@ const { check } = require('express-validator')
 const { createJobPosting, getJobPostings, getJobPostingById, acceptJobPosting, rejectJobPosting, getAcceptedJobOffers, getRejectedJobOffers} = require('../controllers/jobPosting')
 const { isSignedIn, isAuthenticatedA, isAuthenticatedU, isAdmin } = require('../controllers/auth')
 const { getUserById, getAdminById } = require('../controllers/user')
+const { isAuthenticated } = require('../../proj_frontend/src/auth/helper')
 //params
 router.param('userId', getUserById)
 router.param('adminId', getAdminById)
@@ -34,7 +35,7 @@ router.post('/job-postings/create/:adminId',[
 // router.get('/jobs/:userId/rejected', isSignedIn, isAuthenticated, getRejectedJobOffers)
 
 //listings
-router.get('/jobs/admin/:adminId', isSignedIn, isAuthenticatedA, isAdmin, getJobPostings)
+router.get('/jobs/admin/:adminId',isSignedIn, isAuthenticatedA, isAdmin, getJobPostings)
 router.get('/jobs/user/:userId', isSignedIn, isAuthenticatedU, getJobPostings)
 
 
