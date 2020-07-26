@@ -3,7 +3,7 @@ import axios from 'axios'
 import { API } from '../backend'
 import { isAuthenticated } from '../auth/helper'
 
-function JobPosting() {
+function JobOffers() {
 
     const [ posts, setPosts ] = useState([])
 
@@ -11,7 +11,7 @@ function JobPosting() {
     const { token } = isAuthenticated()
 
     useEffect(() => {
-        axios.get(`${API}/jobs/admin/${_id}`, {
+        axios.get(`${API}/jobs/user/${_id}`, {
             headers: {
                 'Authorization' : `Bearer ${token}`
             }
@@ -39,6 +39,10 @@ function JobPosting() {
                             <li className="list-group-item text-muted">Salary (per month)<span className="float-right text-dark">${post.salary}</span></li>
                             <li className="list-group-item text-muted">Openings <span className="float-right text-dark">{post.openings}</span></li>
                         </ul>
+                        <div class="card-body">
+                            <a href="#" class="card-link bg-success p-2 pr-4 pl-4 mt-1 float-left shadow-sm"><i class="fa fa-check"></i> Accept Offer</a>
+                            <a href="#" class="card-link bg-danger p-2 pr-4 pl-4 mt-1 float-right shadow-sm"><i class="fa fa-times"></i> Reject Offer</a>
+                        </div>
                     </div>  
             ))}
         </div>
@@ -46,4 +50,4 @@ function JobPosting() {
     )
 }
 
-export default JobPosting
+export default JobOffers

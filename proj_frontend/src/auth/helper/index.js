@@ -95,3 +95,19 @@ export const isAuthenticated = () => {
         return false
     }
 }
+
+
+export const newJobPosting = job => {
+    return fetch(`${API}/job-postings/create`, {
+        method: "POST",
+        headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(job)
+    })
+    .then(response => {
+        return response.json()
+    })
+    .catch(err => console.log(err))
+}

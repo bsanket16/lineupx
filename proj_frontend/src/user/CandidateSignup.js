@@ -71,7 +71,7 @@ const CandidateSignup = () => {
                         
                         <div className="col-3 my-auto mr-auto order-last">
                             <form className="form-signup">
-                            <h1 className='display-4 mt-3 mb-5 text-dark text-center'>Signup</h1>
+                            <h1 className='display-4 mt-3 mb-5 text-dark text-center'>User Signup</h1>
 
                             <div className="form-label-group shadow-sm rounded">
                                     <input type="name" id="inputName" className="form-control" placeholder='Name' 
@@ -91,7 +91,7 @@ const CandidateSignup = () => {
                                     <label htmlFor="inputPassword">New password</label>
                                 </div>
                                 
-                                <button onClick={ onSubmit } href='/' className="btn btn-lg btn-success btn-block mt-4 mb-3 shadow-sm rounded" type='submit'> Sign up </button>
+                                <button onClick={ onSubmit } href='/' className="btn btn-lg btn-warning btn-block mt-4 mb-3 shadow-sm rounded" type='submit'> Sign up </button>
                                 
                                 {errorMsg()}
                                 {successMsg()}    
@@ -103,8 +103,8 @@ const CandidateSignup = () => {
                             <div className="not-signed-ups rounded bg-success">
                             <div className="mt-4">
                                 <p className="sign-side-text display-4 text-white text-center mb-2">Already Signed Up?</p>
-                                <p className="sign-side-text-2 text-white text-center mb-4">Go to Dashboard</p>
-                                <Link to='/user/login'><button type="button" className="btn btn-outline-light"> Log In </button></Link>
+                                <p className="sign-side-text-2 text-white text-center mb-4">Go to Dashboard, You might have new job offers.</p>
+                                <Link to='/user/login'><button type="button" className="btn btn-outline-light m-auto"> Log In </button></Link>
                             </div>
                             </div>
                         </div>

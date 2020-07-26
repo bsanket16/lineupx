@@ -80,7 +80,7 @@ const CandidateLogin = () => {
                         <div className="row no-gutters">
                         <div className="col-3 ml-auto my-auto">
                             <form className="form-signin" autoComplete='off'>
-                            <h1 className='display-4 mt-3 mb-5 text-dark text-center'>Login</h1>
+                            <h1 className='display-4 mt-3 mb-5 text-dark text-center'>User Login</h1>
                             
                                 <div className="form-label-group shadow-sm rounded">
                                     <input value={ email } type="email" id="inputEmail" className="form-control" 
@@ -94,7 +94,7 @@ const CandidateLogin = () => {
                                 <label htmlFor="inputPassword">Password</label>
                                 </div>
                                 
-                                <button onClick={onSubmit} href='/' className="btn btn-lg btn-success mt-4 mb-2 btn-block shadow-sm rounded" type='submit'> Log In </button>
+                                <button onClick={onSubmit} href='/' className="btn btn-lg btn-warning mt-4 mb-2 btn-block shadow-sm rounded" type='submit'> Log In </button>
                                 
                                 {errorMsg()}
                                 {loadingMsg()}  
@@ -105,8 +105,8 @@ const CandidateLogin = () => {
                         <div className="col-8 ml-auto not-signed-up bg-success">
                             <div className="mt-4">
                             <p className="sign-side-text display-4 text-white text-center mb-1">Looking for a job opportunity?</p>
-                                <p className="sign-side-text-2 text-white text-center mb-4">Join now & start exploring</p>
-                                <Link to='/user/signup'><button type="button" className="btn btn-outline-light"> Sign Up </button></Link>
+                                <p className="sign-side-text-2 text-white text-center mt-4 mb-4">Join now & More than 3433 companies are hiring!</p>
+                                <Link to='/user/signup'><button type="button" className="btn btn-outline-light m-auto"> Sign Up </button></Link>
                             </div>
                         </div>
                     </div>

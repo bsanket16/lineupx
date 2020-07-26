@@ -5,7 +5,7 @@ import { logout, isAuthenticated } from '../auth/helper/index'
 
 const currentTab = (history, path) => {
     if(history.location.pathname === path){
-        return { color : 'pink' }
+        return { color : '#ffc107 ' }
     }
     else{
         return { color : '#ffffff' }

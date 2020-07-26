@@ -6,6 +6,7 @@
 
 body {
   margin-top: 150px;
+  background-color: #ffffff;
   box-sizing: border-box;
 }
 
@@ -13,7 +14,6 @@ body {
 
 .not-signed-up {
   background-image: url(../src/bg.png);
-  background-color: #3F8838;
   min-height: 30em;
   margin: -1px;
   width: 25rem;
@@ -59,8 +59,8 @@ a, a:hover {
 
 .sign-side-text-2 {
   font-family: montserrat;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 16px;  
   letter-spacing: 0.1rem;
 }
 
@@ -78,4 +78,82 @@ a, a:hover {
 
 .fa {
   cursor: pointer;
+}
+
+/*
+ * Sidebar
+ */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1; /* Behind the navbar */
+  padding: 65px 0 0; /* Height of navbar */
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 70px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+@supports ((position: -webkit-sticky) or (position: sticky)) {
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #999;
+}
+
+.sidebar .nav-link.active {
+  color: #007bff;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+} 
+
+.dash-headingi{
+  font-family: 'montserrat' !important;
+  font-size: 1.1rem;
+  margin-left: 1rem;
+}
+.dash-heading{
+  font-family: 'montserrat' !important;
+  font-size: 0.98rem;
+}
+
+.value {
+align-self: end;
+}
+
+.home {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+  margin-top: -100px;
 }

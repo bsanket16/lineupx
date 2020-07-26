@@ -10,6 +10,7 @@ import CandidateDashboard from './user/CandidateDashboard'
 import AdminRoutes from './auth/helper/AdminRoutes'
 import PrivateRoutes from './auth/helper/PrivateRoutes'
 import EmployerDashboard from './user/EmployerDashboard'
+import NewJobPosting from './admin/NewJobPosting'
 
 const Routes = () => {
     return (
@@ -22,6 +23,7 @@ const Routes = () => {
                 <Route path='/employer/login' exact component={ EmployerLogin } />
                 <PrivateRoutes path='/user/dashboard' exact component={ CandidateDashboard } />
                 <AdminRoutes path='/employer/dashboard' exact component={ EmployerDashboard } />
+                <AdminRoutes path='/employer/create/job-posting' exact component={ NewJobPosting } />
             </Switch>
         </BrowserRouter>
     )
