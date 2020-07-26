@@ -13,7 +13,7 @@ const currentTab = (history, path) => {
 }
 
 const Menu = ({ history }) => (
-<>
+    <>
         <nav className="navbar navbar-dark fixed-top bg-dark text-white shadow-sm">
             <div className="container-fluid">
                 <span className="navbar-brand">

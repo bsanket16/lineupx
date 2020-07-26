@@ -1,15 +1,13 @@
-import React, { useState } from 'react'
 import Menu from '../core/Menu'
 import { Link } from 'react-router-dom'
 import JobOffers from '../admin/JobOffers'
 
 const CandidateDashboard = () => {
 
-    
-
     return (
         <>
             <Menu />
+
             <div className="dashboard container-fluid">
                 <div className="row">
 
@@ -66,6 +64,7 @@ const CandidateDashboard = () => {
                         </div>
                     <JobOffers />
                     </main>
+                
                 </div>
             </div>
         </>

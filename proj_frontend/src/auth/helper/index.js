@@ -76,7 +76,6 @@ export const logout = next => {
     } 
 }
 
-//
 export const authenticate = (data, next) => {
     if(typeof window !== "undefined"){
         localStorage.setItem("jwt", JSON.stringify(data))
@@ -95,7 +94,6 @@ export const isAuthenticated = () => {
         return false
     }
 }
-
 
 export const newJobPosting = job => {
     return fetch(`${API}/job-postings/create`, {
