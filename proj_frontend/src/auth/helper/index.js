@@ -32,14 +32,14 @@ export const candidateLogin = user => {
 }
 
 //Employer
-export const employerSignup = user => {
+export const employerSignup = admin => {
     return fetch(`${API}/admin/signup`, {
         method: "POST",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(admin)
     })
     .then(response => {
         return response.json()
@@ -47,19 +47,33 @@ export const employerSignup = user => {
     .catch(err => console.log(err))
 }
 
-export const employerLogin = user => {
+export const employerLogin = admin => {
     return fetch(`${API}/admin/login`, {
         method: "POST",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(admin)
     })
     .then(response => {
         return response.json()
     })
     .catch(err => console.log(err))
+}
+
+//logout
+export const logout = next => {
+    if(typeof window !== "undefined"){
+        localStorage.removeItem("jwt")
+        next()
+
+        return fetch(`${API}/logout`, {
+            method: "GET"
+        })
+        .then(response => console.log('logout success'))
+        .catch(err => console.log(err))
+    } 
 }
 
 //

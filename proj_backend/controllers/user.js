@@ -9,7 +9,7 @@ exports.getUserById = (req, res, next, id) => {
                 error : 'No User Found'
             })
         }
-        req.profile = user
+        req.profileU = user
         next()
     })
 }
@@ -21,7 +21,7 @@ exports.getAdminById = (req, res, next, id) => {
                 error : 'No User Found'
             })
         }
-        req.profile = admin
+        req.profileA = admin
         next()
     })
 }

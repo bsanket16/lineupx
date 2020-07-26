@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Menu from '../core/Menu'
 import { Link, Redirect } from 'react-router-dom'
-import { employerLogin, authenticate} from '../auth/helper';
+import { employerLogin, authenticate, isAuthenticated} from '../auth/helper';
 
 const EmployerLogin = () => {
 
@@ -47,9 +47,6 @@ const EmployerLogin = () => {
         if(didRedirect){
                 return <Redirect to='/employer/dashboard' />
         }
-        // if(isAuthenticated()){
-        //     return <Redirect to='/' />
-        // }
     }
 
     const loadingMsg = () => {

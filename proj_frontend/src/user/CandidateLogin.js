@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 import Menu from '../core/Menu'
 import { Link, Redirect } from 'react-router-dom'
-import { candidateLogin, authenticate, isAuthenticated} from '../auth/helper';
+import { candidateLogin, authenticate, isAuthenticated} from '../auth/helper'
 
 const CandidateLogin = () => {
 
@@ -14,8 +14,6 @@ const CandidateLogin = () => {
     })
 
     const { email, password, error, loading, didRedirect } = values
-
-    // const { user } = isAuthenticated()
 
     const handleChange = name => event => {
         setValues({ ...values, error:false, [name]:event.target.value })
@@ -45,13 +43,11 @@ const CandidateLogin = () => {
         })
     }
 
+
     const performRedirect = () => {
         if(didRedirect){
                 return <Redirect to='/user/dashboard' />
         }
-        // if(isAuthenticated()){
-        //     return <Redirect to='/' />
-        // }
     }
 
     const loadingMsg = () => {

@@ -6,9 +6,10 @@ import CandidateSignup from './user/CandidateSignup'
 import CandidateLogin from './user/CandidateLogin'
 import EmployerLogin from './user/EmployerLogin'
 import EmployerSignup from './user/EmployerSignup'
-
-// import AdminRoutes from './auth/helper/AdminRoutes'
-// import PrivateRoutes from './auth/helper/PrivateRoutes'
+import CandidateDashboard from './user/CandidateDashboard'
+import AdminRoutes from './auth/helper/AdminRoutes'
+import PrivateRoutes from './auth/helper/PrivateRoutes'
+import EmployerDashboard from './user/EmployerDashboard'
 
 const Routes = () => {
     return (
@@ -19,8 +20,8 @@ const Routes = () => {
                 <Route path='/user/login' exact component={ CandidateLogin } />
                 <Route path='/employer/signup' exact component={ EmployerSignup } /> 
                 <Route path='/employer/login' exact component={ EmployerLogin } />
-                {/* <PrivateRoutes path='/user/dashboard' exact component={ UserDashBoard } />
-                <AdminRoutes path='/admin/dashboard' exact component={ AdminDashBoard } /> */}
+                <PrivateRoutes path='/user/dashboard' exact component={ CandidateDashboard } />
+                <AdminRoutes path='/employer/dashboard' exact component={ EmployerDashboard } />
             </Switch>
         </BrowserRouter>
     )

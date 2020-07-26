@@ -67,28 +67,28 @@ exports.adminLogin = (req, res) => {
         })
     }
 
-    Admin.findOne({ email }, (err, admin) => {
-        if(err || !admin){
+    Admin.findOne({ email }, (err, user) => {
+        if(err || !user){
             return res.status(400).json({
                 error : 'Email does not exist'
             })
         }
 
-        if(!admin.authenticate(password))  {
+        if(!user.authenticate(password))  {
             return res.status(401).json({
                 error : 'Incorrect password'
             })
         }
 
         //create token
-        const token = jwt.sign({ _id: admin.id }, process.env.SECRET)
+        const token = jwt.sign({ _id: user.id }, process.env.SECRET)
         
         //cookie
         res.cookie('token', token, {expire: new Date() + 9999})
 
         //response to frontend
-        const {_id, username, email, role} = admin
-        return res.json({token, admin: {_id, username, email, role}})
+        const {_id, username, email, role} = user
+        return res.json({token, user: {_id, username, email, role}})
 
     })
 
@@ -148,8 +148,18 @@ exports.isSignedIn = expressJwt({
 })  
 
 // //custom middleware
-exports.isAuthenticated = (req, res, next) => {
-    let checker = req.profile && req.auth && req.profile._id == req.auth._id
+exports.isAuthenticatedA = (req, res, next) => {
+    let checker = req.profileA && req.auth && req.profileA._id == req.auth._id
+    if(!checker){
+        return res.status(403).json({
+            error: "ACCESS DENIED."
+        })
+    }
+    next()
+}
+
+exports.isAuthenticatedU = (req, res, next) => {
+    let checker = req.profileU && req.auth && req.profileU._id == req.auth._id
     if(!checker){
         return res.status(403).json({
             error: "ACCESS DENIED."
