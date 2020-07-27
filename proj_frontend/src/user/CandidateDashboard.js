@@ -16,10 +16,10 @@ const CandidateDashboard = () => {
                         <div className="sidebar-sticky pt-4">
                             <ul className="nav flex-column text-dark">
                                 <li className="nav-item mb-5 shadow-lg">
-                                    <a className="nav-link active text-warning dash-headingi" href="/user/dashboard">
+                                    <div className="nav-link active text-warning dash-headingi">
                                     <span data-feather="home"></span>
                                     Candidate D.  <span className="sr-only">(current)</span>
-                                    </a>
+                                    </div>
                                 </li>
 
                                 <li className="nav-item ml-3">
