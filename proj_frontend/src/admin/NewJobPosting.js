@@ -73,12 +73,11 @@ const NewJobPosting = () => {
                         <div className="row no-gutters">
                         
                         <div className="col-12 my-auto mr-auto order-last">
-                            <form className="form-signup">
-                            <h1 className='display-4 mt-3 mb-5 text-dark text-center'></h1>
+                            <form className="form-signup p-5">
 
                             <div className="form-label-group shadow-sm rounded">
                                     <input type="text" id="title" className="form-control" placeholder='Job Title' 
-                                    required autoFocus onChange={handleChange("title")} autoComplete="new-name" value= { title } />
+                                    required autoFocus onChange={handleChange("title")} autoComplete="off" value= { title } />
                                     <label htmlFor="inputName">Job Title</label>
                                 </div>
 
@@ -90,23 +89,23 @@ const NewJobPosting = () => {
 
                                 <div className="form-label-group shadow-sm rounded">
                                     <input type="text" id="location" className="form-control" placeholder='Job Location' 
-                                    required autoFocus onChange={handleChange("location")} autoComplete="new-name" value= { location } />
+                                    required  onChange={handleChange("location")} autoComplete="new-name" value= { location } />
                                     <label htmlFor="inputName">Location</label>
                                 </div>
 
                                 <div className="form-label-group shadow-sm rounded">
                                     <input type="number" id="salary" className="form-control" placeholder='Salary (per month)' 
-                                    required autoFocus onChange={handleChange("salary")} autoComplete="new-name" value= { salary } />
+                                    required  onChange={handleChange("salary")} autoComplete="new-name" value= { salary } />
                                     <label htmlFor="inputName">Salary</label>
                                 </div>
 
                                 <div className="form-label-group shadow-sm rounded">
                                     <input type="number" id="openings" className="form-control" placeholder='Number of openings' 
-                                    required autoFocus onChange={handleChange("openings")} autoComplete="new-name" value= { openings } />
+                                    required  onChange={handleChange("openings")} autoComplete="new-name" value= { openings } />
                                     <label htmlFor="inputName">Openings</label>
                                 </div>
                                 
-                                <button onClick={ onSubmit } href='/employer/dashboard' className="btn btn-lg btn-success btn-block mt-4 mb-3 shadow-sm rounded" type='submit'> Create a new job posting </button>
+                                <button onClick={ onSubmit } href='/employer/dashboard' className="btn btn-lg btn-warning btn-block mt-4 mb-3 shadow-sm rounded" type='submit'> Create a new job posting </button>
                                 
                                 {errorMsg()}
                                 {successMsg()}    
@@ -133,21 +132,21 @@ const NewJobPosting = () => {
                         <div className="sidebar-sticky pt-4">
                             <ul className="nav flex-column text-dark">
                                 <li className="nav-item mb-5 shadow-sm">
-                                    <a className="nav-link active text-warning dash-headingi" href="#">
+                                    <a className="nav-link active text-warning dash-headingi" href="/employer/dashboard">
                                     <span data-feather="home"></span>
-                                    Employer D. <span class="sr-only">(current)</span>
+                                    Employer D. <span className="sr-only">(current)</span>
                                     </a>
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="#">
+                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
                                     <span data-feather="file"></span>
                                     Update Profile
                                     </a>
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="#">
+                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
                                     <span data-feather="file"></span>
                                         <Link className="text-info" to='/employer/dashboard'>
                                             New Job Posting
@@ -156,7 +155,7 @@ const NewJobPosting = () => {
                                 </li>
                                 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="#">
+                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
                                     <span data-feather="file"></span>
                                     Delete Account
                                     </a>

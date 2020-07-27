@@ -102,7 +102,7 @@ const CandidateLogin = () => {
                             </form>
                         </div>
 
-                        <div className="col-8 ml-auto not-signed-up bg-success">
+                        <div className="col-8 ml-auto not-signed-up">
                             <div className="mt-4">
                             <p className="sign-side-text display-4 text-white text-center mb-1">Looking for a job opportunity?</p>
                                 <p className="sign-side-text-2 text-white text-center mt-4 mb-4">Join now & More than 3433 companies are hiring!</p>

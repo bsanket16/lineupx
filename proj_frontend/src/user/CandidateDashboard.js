@@ -1,3 +1,4 @@
+import React from 'react';
 import Menu from '../core/Menu'
 import { Link } from 'react-router-dom'
 import JobOffers from '../admin/JobOffers'
@@ -15,14 +16,14 @@ const CandidateDashboard = () => {
                         <div className="sidebar-sticky pt-4">
                             <ul className="nav flex-column text-dark">
                                 <li className="nav-item mb-5 shadow-lg">
-                                    <a className="nav-link active text-warning dash-headingi" href="#">
+                                    <a className="nav-link active text-warning dash-headingi" href="/user/dashboard">
                                     <span data-feather="home"></span>
-                                    Candidate D.  <span class="sr-only">(current)</span>
+                                    Candidate D.  <span className="sr-only">(current)</span>
                                     </a>
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="#">
+                                    <a className="nav-link text-light dash-heading" href="/user/dashboard">
                                     <span data-feather="file"></span>
                                     <Link to="/user/dashboard">
                                         Job Offers
@@ -31,14 +32,14 @@ const CandidateDashboard = () => {
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="#">
+                                    <a className="nav-link text-light dash-heading" href="/user/dashboard">
                                     <span data-feather="file"></span>
                                     Accepted Jobs
                                     </a>
                                 </li>
                                 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="#">
+                                    <a className="nav-link text-light dash-heading" href="/user/dashboard">
                                     <span data-feather="file"></span>
                                     Rejected Jobs
                                     </a>

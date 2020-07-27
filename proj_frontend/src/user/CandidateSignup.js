@@ -100,7 +100,7 @@ const CandidateSignup = () => {
                         </div>
 
                         <div className="col-8 my-0 p-0 mr-auto ">
-                            <div className="not-signed-ups rounded bg-success">
+                            <div className="not-signed-ups rounded">
                             <div className="mt-4">
                                 <p className="sign-side-text display-4 text-white text-center mb-2">Already Signed Up?</p>
                                 <p className="sign-side-text-2 text-white text-center mb-4">Go to Dashboard, You might have new job offers.</p>
