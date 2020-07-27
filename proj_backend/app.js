@@ -6,18 +6,17 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const path = require('path')
 
-const app = express()
-
-app.use(cors())
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json())
-
 // routes
 const authRoutes = require('./routes/auth')
 const jobPostingRoutes = require('./routes/jobPosting')
 
+const app = express()
+
+app.use(cors())
+app.use(bodyParser.json())
+
 //DB connection
-mongoose.connect( process.env.DATABASE, {
+mongoose.connect( process.env.MONGODB_URI || process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
@@ -25,10 +24,10 @@ mongoose.connect( process.env.DATABASE, {
 .then(() => {
     console.log('Database Connected')
 })
-.catch(err => (console.log(err)))
 
 app.use('/api', authRoutes)
 app.use('/api', jobPostingRoutes)
+
 
 // Serve static assets
 if (process.env.NODE_ENV === 'production') {
@@ -36,15 +35,8 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('../proj_frontend/build'))
     
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'proj_frontend', 'build', 'index.html'))
+        res.sendFile(path.resolve(__dirname, + '../proj_frontend/build/index.html'))
     })
 }
 
-    // Set static folder
-
-const port = process.env.PORT || 7000
-
-//server
-app.listen(port, () => {
-    console.log(`App running at ${port}`)
-})
+export default App
