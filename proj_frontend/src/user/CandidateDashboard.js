@@ -39,7 +39,7 @@ const CandidateDashboard = () => {
                                 </li>
                                 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/user/dashboard">
+                                    <a className="nav-link text-light dash-heading" href="https://powerful-basin-37766.herokuapp.com/employer/dashboard">
                                     <span data-feather="file"></span>
                                     Rejected Jobs
                                     </a>
