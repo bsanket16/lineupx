@@ -18,7 +18,7 @@ const jobPostingRoutes = require('./routes/jobPosting')
 
 
 //DB connection
-mongoose.connect( process.env.DATABASE || 'mongodb://localhost:27017/lineupx', {
+mongoose.connect( process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
@@ -41,8 +41,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
     // Set static folder
-
-
 
 const port = process.env.PORT || 7000
 
