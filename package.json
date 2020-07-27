@@ -18,5 +18,8 @@
       "target": "http://localhost:7000",
       "secure": false
     }
+  },
+  "engines": {
+    "node": "14.4.0"
   }
 }
