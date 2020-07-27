@@ -16,21 +16,21 @@ const EmployerDashboard = () => {
                         <div className="sidebar-sticky pt-4">
                             <ul className="nav flex-column text-dark">
                                 <li className="nav-item mb-5 shadow-lg">
-                                    <a className="nav-link active text-warning dash-headingi" href="/employer/dashboard">
+                                    <a className="nav-link active text-warning dash-headingi" href="/#/employer/dashboard">
                                     <span data-feather="home"></span>
                                     Employer D.  <span className="sr-only">(current)</span>
                                     </a>
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
+                                    <a className="nav-link text-light dash-heading" href="/#/employer/dashboard">
                                     <span data-feather="file"></span>
                                     Update Profile
                                     </a>
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
+                                    <a className="nav-link text-light dash-heading" href="/#/employer/dashboard">
                                     <span data-feather="file"></span>
                                         <Link to='/employer/create/job-posting'>
                                             New Job Posting
@@ -39,7 +39,7 @@ const EmployerDashboard = () => {
                                 </li>
                                 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
+                                    <a className="nav-link text-light dash-heading" href="/#/employer/dashboard">
                                     <span data-feather="file"></span>
                                     Delete Account
                                     </a>

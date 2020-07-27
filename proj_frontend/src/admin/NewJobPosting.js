@@ -132,21 +132,21 @@ const NewJobPosting = () => {
                         <div className="sidebar-sticky pt-4">
                             <ul className="nav flex-column text-dark">
                                 <li className="nav-item mb-5 shadow-sm">
-                                    <a className="nav-link active text-warning dash-headingi" href="/employer/dashboard">
+                                    <a className="nav-link active text-warning dash-headingi" href="/#/employer/dashboard">
                                     <span data-feather="home"></span>
-                                    Employer D. <span className="sr-only">(current)</span>
+                                    Employer Dashboard <span className="sr-only">(current)</span>
                                     </a>
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
+                                    <a className="nav-link text-light dash-heading" href="/#/employer/dashboard">
                                     <span data-feather="file"></span>
                                     Update Profile
                                     </a>
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
+                                    <a className="nav-link text-light dash-heading" href="/#/employer/dashboard">
                                     <span data-feather="file"></span>
                                         <Link className="text-info" to='/employer/dashboard'>
                                             New Job Posting
@@ -155,7 +155,7 @@ const NewJobPosting = () => {
                                 </li>
                                 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/employer/dashboard">
+                                    <a className="nav-link text-light dash-heading" href="/#/employer/dashboard">
                                     <span data-feather="file"></span>
                                     Delete Account
                                     </a>

@@ -40,8 +40,8 @@ function JobPosting() {
                             <li className="list-group-item text-muted">Openings <span className="float-right text-dark">{post.openings}</span></li>
                         </ul>
                         <div className="card-body">
-                            <a href="/employer/dashboard" className="card-link bg-info p-2 pr-4 pl-4 mt-1 float-left shadow-sm"><i className="fa fa-pencil"></i> Update Posting</a>
-                            <a href="/employer/dashboard" className="card-link bg-danger p-2 pr-4 pl-4 mt-1 float-right shadow-sm"><i className="fa fa-times"></i> Close Posting</a>
+                            <a href="/#/employer/dashboard" className="card-link bg-info p-2 pr-4 pl-4 mt-1 float-left shadow-sm"><i className="fa fa-pencil"></i> Update Posting</a>
+                            <a href="/#/employer/dashboard" className="card-link bg-danger p-2 pr-4 pl-4 mt-1 float-right shadow-sm"><i className="fa fa-times"></i> Close Posting</a>
                         </div>
                     </div>  
             ))}
