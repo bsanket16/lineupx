@@ -17,7 +17,7 @@ export const candidateSignup = user => {
 }
 
 export const candidateLogin = user => {
-    return fetch(`${API}/user/login`, {
+    return fetch(`/api/user/login`, {
         method: "POST",
         headers: {
             Accept: "application/json",

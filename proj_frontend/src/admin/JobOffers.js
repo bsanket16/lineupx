@@ -11,7 +11,7 @@ function JobOffers() {
     const { token } = isAuthenticated()
 
     useEffect(() => {
-        axios.get(`${API}/jobs/user/${_id}`, {
+        axios.get(`/jobs/user/${_id}`, {
             headers: {
                 'Authorization' : `Bearer ${token}`
             }
