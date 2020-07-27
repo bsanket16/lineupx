@@ -2,7 +2,7 @@ import { API } from '../../backend'
 
 //Candidate
 export const candidateSignup = user => {
-    return fetch(`${API}/user/signup`, {
+    return fetch(`/user/signup`, {
         method: "POST",
         headers: {
             Accept: "application/json",
