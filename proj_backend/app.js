@@ -17,7 +17,7 @@ const authRoutes = require('./routes/auth')
 const jobPostingRoutes = require('./routes/jobPosting')
 
 //DB connection
-mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost:27017/lineupx', {
+mongoose.connect( process.env.DATABASE, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
@@ -25,6 +25,7 @@ mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost:27017/lineupx'
 .then(() => {
     console.log('Database Connected')
 })
+.catch(err => (console.log(err)))
 
 app.use('/api', authRoutes)
 app.use('/api', jobPostingRoutes)
