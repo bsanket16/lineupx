@@ -18,7 +18,7 @@ const EmployerDashboard = () => {
                                 <li className="nav-item mb-5 shadow-lg">
                                     <a className="nav-link active text-warning dash-headingi" href="/#/employer/dashboard">
                                     <span data-feather="home"></span>
-                                    Employer D.  <span className="sr-only">(current)</span>
+                                    Employer Dashboard  <span className="sr-only">(current)</span>
                                     </a>
                                 </li>
 
@@ -30,7 +30,7 @@ const EmployerDashboard = () => {
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/#/employer/dashboard">
+                                    <a className="nav-link text-light dash-heading" href="/#/employer/create/job-posting">
                                     <span data-feather="file"></span>
                                         <Link to='/employer/create/job-posting'>
                                             New Job Posting
