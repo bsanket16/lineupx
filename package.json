@@ -12,5 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "concurrently": "^5.2.0"
+  },
+  "proxy": {
+    "/api/*":  {
+      "target": "http://localhost:7000",
+      "secure": false
+    }
   }
 }
