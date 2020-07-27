@@ -40,7 +40,7 @@ function JobOffers() {
                             <li className="list-group-item text-muted">Openings <span className="float-right text-dark">{post.openings}</span></li>
                         </ul>
                         <div className="card-body">
-                            <a href="/user/dashboard" className="card-link bg-success p-2 pr-4 pl-4 mt-1 float-left shadow-sm"><i className="fa fa-check"></i> Accept Offer</a>
+                            <a href="/#/user/dashboard" className="card-link bg-success p-2 pr-4 pl-4 mt-1 float-left shadow-sm"><i className="fa fa-check"></i> Accept Offer</a>
                             <a href="/user/dashboard" className="card-link bg-danger p-2 pr-4 pl-4 mt-1 float-right shadow-sm"><i className="fa fa-times"></i> Reject Offer</a>
                         </div>
                     </div>  
