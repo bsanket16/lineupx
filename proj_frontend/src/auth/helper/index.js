@@ -1,4 +1,4 @@
-import { API } from '../../backend'
+// import { API } from '../../backend'
 
 //Candidate
 export const candidateSignup = user => {
@@ -33,7 +33,7 @@ export const candidateLogin = user => {
 
 //Employer
 export const employerSignup = admin => {
-    return fetch(`${API}/admin/signup`, {
+    return fetch(`/api/admin/signup`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -48,7 +48,7 @@ export const employerSignup = admin => {
 }
 
 export const employerLogin = admin => {
-    return fetch(`${API}/admin/login`, {
+    return fetch(`/api/admin/login`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -68,7 +68,7 @@ export const logout = next => {
         localStorage.removeItem("jwt")
         next()
 
-        return fetch(`${API}/logout`, {
+        return fetch(`/api/logout`, {
             method: "GET"
         })
         .then(response => console.log('logout success'))
@@ -96,7 +96,7 @@ export const isAuthenticated = () => {
 }
 
 export const newJobPosting = job => {
-    return fetch(`${API}/job-postings/create`, {
+    return fetch(`/api/job-postings/create`, {
         method: "POST",
         headers: {
             Accept: "application/json",

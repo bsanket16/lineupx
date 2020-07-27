@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { API } from '../backend'
+// import { API } from '../backend'
 import { isAuthenticated } from '../auth/helper'
 
 function JobOffers() {
@@ -11,7 +11,7 @@ function JobOffers() {
     const { token } = isAuthenticated()
 
     useEffect(() => {
-        axios.get(`/jobs/user/${_id}`, {
+        axios.get(`/api/jobs/user/${_id}`, {
             headers: {
                 'Authorization' : `Bearer ${token}`
             }
