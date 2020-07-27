@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Switch, Route } from 'react-router-dom'
 
 import Home from './core/Home'
 import CandidateSignup from './user/CandidateSignup'
@@ -14,7 +14,7 @@ import NewJobPosting from './admin/NewJobPosting'
 
 const Routes = () => {
     return (
-        <BrowserRouter>
+        <HashRouter>
             <Switch>
                 <Route path='/' exact component={ Home } />
                 <Route path='/user/signup' exact component={ CandidateSignup } /> 
@@ -25,7 +25,7 @@ const Routes = () => {
                 <AdminRoutes path='/employer/dashboard' exact component={ EmployerDashboard } />
                 <AdminRoutes path='/employer/create/job-posting' exact component={ NewJobPosting } />
             </Switch>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 

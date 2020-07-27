@@ -18,17 +18,17 @@ const CandidateDashboard = () => {
                                 <li className="nav-item mb-5 shadow-lg">
                                     <div className="nav-link active text-warning dash-headingi">
                                     <span data-feather="home"></span>
-                                    Candidate D.  <span className="sr-only">(current)</span>
+                                    Candidate Dashboard.  <span className="sr-only">(current)</span>
                                     </div>
                                 </li>
 
                                 <li className="nav-item ml-3">
-                                    <a className="nav-link text-light dash-heading" href="/user/dashboard">
+                                    <div className="nav-link text-light dash-heading">
                                     <span data-feather="file"></span>
                                     <Link to="/user/dashboard">
                                         Job Offers
                                     </Link>
-                                    </a>
+                                    </div>
                                 </li>
 
                                 <li className="nav-item ml-3">
