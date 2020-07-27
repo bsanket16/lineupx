@@ -8,8 +8,9 @@ const path = require('path')
 
 const app = express()
 
-app.use(bodyParser.json())
 app.use(cors())
+app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json())
 
 // routes
 const authRoutes = require('./routes/auth')
