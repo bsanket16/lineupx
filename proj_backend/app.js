@@ -4,6 +4,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const cors = require('cors')
+const path = require('path')
 
 const app = express()
 
@@ -25,6 +26,16 @@ mongoose.connect( process.env.DATABASE, {
 })
 .then(() => {
     console.log('Database Connected')
+})
+
+// Serve static assets
+
+
+    // Set static folder
+app.use(express.static(path.join(__dirname, '../proj_frontend/build')))
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, + '../proj_frontend/build/index.html'))
 })
 
 const port = process.env.PORT
