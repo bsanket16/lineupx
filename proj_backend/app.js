@@ -15,8 +15,7 @@ app.use(cors())
 const authRoutes = require('./routes/auth')
 const jobPostingRoutes = require('./routes/jobPosting')
 
-app.use('/api', authRoutes)
-app.use('/api', jobPostingRoutes)
+
 
 //DB connection
 mongoose.connect( process.env.DATABASE, {
@@ -28,17 +27,24 @@ mongoose.connect( process.env.DATABASE, {
     console.log('Database Connected')
 })
 
-// Serve static assets
+app.use('/api', authRoutes)
+app.use('/api', jobPostingRoutes)
 
+// Serve static assets
+if (process.env.NODE_ENV === 'production') {
+    
+    app.use(express.static('../proj_frontend/build'))
+    
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, + '../proj_frontend/build/index.html'))
+    })
+}
 
     // Set static folder
-app.use(express.static(path.join(__dirname, '../proj_frontend/build')))
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, + '../proj_frontend/build/index.html'))
-})
 
-const port = process.env.PORT
+
+const port = process.env.PORT || 7000
 
 //server
 app.listen(port, () => {
