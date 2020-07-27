@@ -25,7 +25,7 @@ body {
 
 .not-signed-ups {
   background-image: url(../src/bg.png);
-  min-height: 30em;
+  min-height: 40em;
   margin: -1px;
   border-radius: 4px;
   display: flex;
