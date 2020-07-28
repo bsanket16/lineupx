@@ -7,6 +7,7 @@ const NewJobPosting = () => {
 
     const [values, setValues] = useState({
         title: '',
+        companyName: '',
         location: '',
         salary: '',
         openings: '',
@@ -14,7 +15,7 @@ const NewJobPosting = () => {
         success: false
     })
 
-    const { title, location, salary, openings, error, success } = values
+    const { title, companyName, location, salary, openings, error, success } = values
 
     const handleChange = name => event => {
         setValues({...values, error:false, [name]:event.target.value})
@@ -23,7 +24,7 @@ const NewJobPosting = () => {
     const onSubmit = event => {
         event.preventDefault()
         setValues({...values, error: false})
-        newJobPosting({title, location, salary, openings})
+        newJobPosting({title, companyName, location, salary, openings})
         .then((data) => {
             if(data.error){
                 setValues({...values, error:data.error, success: false})
@@ -31,6 +32,7 @@ const NewJobPosting = () => {
             else{
                 setValues({...values,
                 title: '',
+                companyName: '',
                 location: '',
                 salary: '',
                 openings: '',
@@ -77,6 +79,12 @@ const NewJobPosting = () => {
                                     <input type="text" id="title" className="form-control" placeholder='Job Title' 
                                     required autoFocus onChange={handleChange("title")} autoComplete="off" value= { title } />
                                     <label htmlFor="inputName">Job Title</label>
+                                </div>
+
+                                <div className="form-label-group shadow-sm rounded">
+                                    <input type="text" id="companyName" className="form-control" placeholder='Organisation' 
+                                    required onChange={handleChange("companyName")}  autoComplete="off" value= { isAuthenticated().user.organisation } disabled />
+                                    <label htmlFor="inputEmail">Organisation Name</label>
                                 </div>
 
                                 <div className="form-label-group shadow-sm rounded">
