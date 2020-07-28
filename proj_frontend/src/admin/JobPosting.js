@@ -25,7 +25,7 @@ function JobPosting() {
         })
     }, [])
 
-    const organisation = isAuthenticated().admin.organisation
+    const organisation = isAuthenticated().user.organisation
     console.log(organisation)
 
     return (
