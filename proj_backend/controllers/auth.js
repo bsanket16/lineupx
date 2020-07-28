@@ -87,8 +87,8 @@ exports.adminLogin = (req, res) => {
         res.cookie('token', token, {expire: new Date() + 9999})
 
         //response to frontend
-        const {_id, username, email, role} = user
-        return res.json({token, user: {_id, username, email, role}})
+        const {_id, username, email, organisation, role} = user
+        return res.json({token, user: {_id, username, email, organisation, role}})
 
     })
 

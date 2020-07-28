@@ -25,6 +25,9 @@ function JobPosting() {
         })
     }, [])
 
+    const organisation = isAuthenticated().admin.organisation
+    console.log(organisation)
+
     return (
         <div className="row d-flex">
             {posts.map(post => (
@@ -46,7 +49,6 @@ function JobPosting() {
                     </div>  
             ))}
         </div>
-
     )
 }
 
