@@ -35,7 +35,7 @@ function JobPosting() {
                             <p className="card-text text-muted">Looking for highly qualified and hard-working employees for our organisation.</p>
                         </div>
                         <ul className="list-group list-group-flush mt-1">
-                            <li className="list-group-item text-muted">Organisation  <span className="float-right text-dark">{post.companyName}</span></li>
+                            <li className="list-group-item text-muted">Organisation  <span className="float-right text-dark">{isAuthenticated().user.organisation}</span></li>
                             <li className="list-group-item text-muted">Job Location  <span className="float-right text-dark">{post.location}</span></li>
                             <li className="list-group-item text-muted">Salary (per month)<span className="float-right text-dark">${post.salary}</span></li>
                             <li className="list-group-item text-muted">Openings <span className="float-right text-dark">{post.openings}</span></li>
