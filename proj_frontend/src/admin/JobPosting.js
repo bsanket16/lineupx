@@ -47,7 +47,7 @@ function JobPosting() {
                             <a href="/#/employer/dashboard" className="card-link bg-danger p-2 pr-4 pl-4 mt-1 float-right shadow-sm"><i className="fa fa-times"></i> Close Posting</a>
                         </div>
                     </div>  
-            ))}
+            )).filter(post => post.companyName === organisation)}
         </div>
     )
 }
