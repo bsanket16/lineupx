@@ -27,7 +27,7 @@ function JobPosting() {
 
     return (
         <div className="row d-flex">
-            {posts.filter(post => post.salary < 10000)
+            {posts.filter(post => post.companyName === isAuthenticated().user.organisation)
             .map(post => (
                     <div className="card col-5 m-4" key={post.id}>
                         <div className="card-body">

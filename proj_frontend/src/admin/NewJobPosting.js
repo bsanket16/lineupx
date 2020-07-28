@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Menu from '../core/Menu'
 import { Link } from 'react-router-dom'
-import { newJobPosting } from '../auth/helper'
+import { newJobPosting, isAuthenticated } from '../auth/helper'
 
 const NewJobPosting = () => {
 
@@ -83,7 +83,7 @@ const NewJobPosting = () => {
 
                                 <div className="form-label-group shadow-sm rounded">
                                     <input type="text" id="companyName" className="form-control" placeholder='Organisation' 
-                                    required onChange={handleChange("companyName")}  autoComplete="off" value= { companyName } />
+                                    required onChange={handleChange("companyName")}  autoComplete="off" value= { isAuthenticated().user.organisation } />
                                     <label htmlFor="inputEmail">Organisation Name</label>
                                 </div>
 
