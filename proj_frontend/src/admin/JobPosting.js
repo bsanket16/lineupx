@@ -27,7 +27,8 @@ function JobPosting() {
 
     return (
         <div className="row d-flex">
-            {posts.map(post => (
+            {posts.filter(post => post.salary < 10000)
+            .map(post => (
                     <div className="card col-5 m-4" key={post.id}>
                         <div className="card-body">
                             <h5 className="card-title">{post.title}</h5>
@@ -44,7 +45,7 @@ function JobPosting() {
                             <a href="/#/employer/dashboard" className="card-link bg-danger p-2 pr-4 pl-4 mt-1 float-right shadow-sm"><i className="fa fa-times"></i> Close Posting</a>
                         </div>
                     </div>  
-            )).filter(post => post.salary < 10000)}
+            ))} 
         </div>
     )
 }
