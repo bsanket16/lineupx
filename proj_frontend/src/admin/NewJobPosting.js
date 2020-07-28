@@ -83,14 +83,14 @@ const NewJobPosting = () => {
 
                                 <div className="form-label-group shadow-sm rounded">
                                     <input type="text" id="companyName" className="form-control" placeholder='Organisation' 
-                                    required onChange={handleChange("companyName")}  autoComplete="off" value= { isAuthenticated().user.organisation } disabled />
+                                    required  autoComplete="off" value= { isAuthenticated().user.organisation } />
                                     <label htmlFor="inputEmail">Organisation Name</label>
                                 </div>
 
                                 <div className="form-label-group shadow-sm rounded">
                                     <input type="text" id="location" className="form-control" placeholder='Job Location' 
                                     required  onChange={handleChange("location")} autoComplete="new-name" value= { location } />
-                                    <label htmlFor="inputName">Location</label>
+                                    <label htmlFor="inputName">Job Location</label>
                                 </div>
 
                                 <div className="form-label-group shadow-sm rounded">
