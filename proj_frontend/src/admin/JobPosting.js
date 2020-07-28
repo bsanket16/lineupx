@@ -25,9 +25,6 @@ function JobPosting() {
         })
     }, [])
 
-    const organisation = isAuthenticated().user.organisation
-    console.log(organisation)
-
     return (
         <div className="row d-flex">
             {posts.map(post => (
@@ -47,7 +44,7 @@ function JobPosting() {
                             <a href="/#/employer/dashboard" className="card-link bg-danger p-2 pr-4 pl-4 mt-1 float-right shadow-sm"><i className="fa fa-times"></i> Close Posting</a>
                         </div>
                     </div>  
-            )).filter(post => post.companyName === organisation)}
+            )).filter(post => (post.companyName === isAuthenticated().user.organisation))}
         </div>
     )
 }
