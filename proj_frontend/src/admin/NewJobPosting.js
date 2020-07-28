@@ -7,7 +7,7 @@ const NewJobPosting = () => {
 
     const [values, setValues] = useState({
         title: '',
-        companyName: '',
+        companyName: `${isAuthenticated().user.organisation}`,
         location: '',
         salary: '',
         openings: '',
@@ -83,7 +83,7 @@ const NewJobPosting = () => {
 
                                 <div className="form-label-group shadow-sm rounded">
                                     <input type="text" id="companyName" className="form-control" placeholder='Organisation' 
-                                    required  autoComplete="off" value= { isAuthenticated().user.organisation } />
+                                    required onChange={handleChange("companyName")}  autoComplete="off" value= { companyName } />
                                     <label htmlFor="inputEmail">Organisation Name</label>
                                 </div>
 
