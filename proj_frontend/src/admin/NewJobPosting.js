@@ -83,7 +83,7 @@ const NewJobPosting = () => {
 
                                 <div className="form-label-group shadow-sm rounded">
                                     <input type="text" id="companyName" className="form-control" placeholder='Organisation' 
-                                    required onChange={handleChange("companyName")}  autoComplete="off" value= { companyName } />
+                                    required onChange={handleChange("companyName")}  autoComplete="off" value= { companyName } disabled />
                                     <label htmlFor="inputEmail">Organisation Name</label>
                                 </div>
 
